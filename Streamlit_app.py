@@ -25,10 +25,8 @@ df.set_index('Date', inplace=True)
 # Exploring the Dataset
 print(df.head())
 
-# Design and configure the web page and title.
-# Specify the title and logo for the web page
-st.set_page_config(page_title='Nvidia Stock Prices', page_icon = 'D:\\Extra_projects\\Streamlit Project\\Nvidia-logo.png',
-                   layout="wide")
+# Design and configure the web page and title
+st.title('Nvidia Stock Price Analysis')
 
 # Display the Data in the App
 st.subheader('Looking at the Data')
