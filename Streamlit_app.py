@@ -1,13 +1,15 @@
-# importing the libraries
+# Importing the libraries
 import pandas as pd
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import datetime
 
+# Importing the Dataset
 df = pd.read_csv('D:\\Extra_projects\\Streamlit Project\\NVidia_stock_history.csv')
 df.head(5)
 
+# Analyzing the dataset for the date range between 1/1/2019 to 2021/11/12
 # Delete rows where date is before 1/1/2019.
 df['Date'] = pd.to_datetime(df['Date'])
 df = df[~(df['Date'] < '2019-01-01')]
@@ -20,9 +22,10 @@ df['Date'] = pd.to_datetime(df['Date'], format='%Y/%m/%d')
 df.reset_index(drop=True, inplace=True)
 df.set_index('Date', inplace=True)
 
+# Exploring the Dataset
 print(df.head())
 
-# Design and configure the web page
+# Design and configure the web page and title.
 # Specify the title and logo for the web page
 st.set_page_config(page_title='Nvidia Stock Prices', page_icon = 'D:\\Extra_projects\\Streamlit Project\\Nvidia-logo.png',
                    layout="wide")
